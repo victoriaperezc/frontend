@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-autenticacion
+  namespace: default
+  labels:
+    app: front-autenticacion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-autenticacion
+  template:
+    metadata:
+      labels:
+        app: front-autenticacion
+    spec:
+      containers:
+      - name: front-autenticacion
+        image: victoriaperez/frontend:latest
+        ports:
+        - containerPort: 19006
+
+

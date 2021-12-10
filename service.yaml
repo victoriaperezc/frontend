@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-autenticacion
+spec:
+  type: NodePort
+  selector:
+    app: front-autenticacion
+  ports:
+  - protocol: TCP
+    port: 19006
+    nodePort: 31000
